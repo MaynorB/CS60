@@ -11,7 +11,15 @@ public class Hw4Pr3Recursion {
 	 *         by k
 	 */
 	public static int countDivisibleBy(int n, int k) {
-		return 0; // TODO: Implement countDivisibleBy
+		if (n == 0){
+			return 1;
+		}
+		else if (n % k == 0){
+			return 1 + countDivisibleBy(n - 1, k);
+		}
+		else{
+		return countDivisibleBy(n - 1, k); 
+		}
 	}
 
 	public static void main(String[] args) {

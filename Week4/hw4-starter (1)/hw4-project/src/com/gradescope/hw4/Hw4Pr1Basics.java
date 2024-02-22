@@ -22,7 +22,10 @@ public class Hw4Pr1Basics {
 	 * Source: http://codingbat.com/prob/p187868
 	 */
 	public static boolean sleepIn(boolean weekday, boolean vacation) {
-		return true; // TODO: Implement sleepIn
+		if (vacation || !weekday) {
+			return true;
+		}
+		return false; 
 	}
 
 	/**
@@ -32,7 +35,10 @@ public class Hw4Pr1Basics {
 	 * Source: http://codingbat.com/prob/p182873
 	 */
 	public static boolean makes10(int a, int b) {
-		return true; // TODO: Implement makes10
+		if (a == 10 || b == 10 || a + b == 10) {
+			return true;
+		}
+		return false; 
 	}
 
 	/**
@@ -43,7 +49,10 @@ public class Hw4Pr1Basics {
 	 * Source: http://codingbat.com/prob/p181646
 	 */
 	public static boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
-		return true;
+		if ((bSmile && aSmile) || (!bSmile && !aSmile)) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -53,7 +62,10 @@ public class Hw4Pr1Basics {
 	 * Source: http://codingbat.com/prob/p144535
 	 */
 	public static boolean in1020(int a, int b) {
-		return true; // TODO: Implement in1020
+		if ((a <= 20 && a >= 10) || (b <= 20 && b >= 10)) {
+			return true;
+		}
+		return false; 
 	}
 
 	/**
@@ -63,7 +75,10 @@ public class Hw4Pr1Basics {
 	 * Source: http://codingbat.com/prob/p192082
 	 */
 	public static boolean icyHot(int temp1, int temp2) {
-		return true; // TODO: Implement icyHot
+		if ((temp1 > 100 && temp2 <= 0) || (temp1 <= 0 && temp2 > 100)) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -73,7 +88,10 @@ public class Hw4Pr1Basics {
 	 * Source: http://codingbat.com/prob/p178986
 	 */
 	public static boolean hasTeen(int a, int b, int c) {
-		return true; // TODO: Implement hasTeen
+		if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19) || (c >= 13 && c <= 19)) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -84,7 +102,10 @@ public class Hw4Pr1Basics {
 	 * Source: http://codingbat.com/prob/p125339
 	 */
 	public static boolean lastDigit(int a, int b) {
-		return true; // TODO: Implement lastDigit
+		if (a % 10 == b % 10) {
+			return true;
+		}
+		return false; 
 	}
 
 	/**
@@ -95,7 +116,17 @@ public class Hw4Pr1Basics {
 	 * Source: http://codingbat.com/prob/p159227
 	 */
 	public static boolean posNeg(int a, int b, boolean negative) {
-		return true; // TODO: Implement posNeg
+		if (negative) {
+			if (a < 0 && b < 0) {
+				return true;
+			}
+			return false;
+		}else{
+			if ((a < 0 && b >= 0) || (a >= 0 && b < 0)) {
+				return true;
+			}
+			return false;
+		}
 	}
 
 	/**
@@ -115,9 +146,10 @@ public class Hw4Pr1Basics {
 	 * Source: Mudd faculty
 	 */
 	public static int calculateMax(int a, int b, int c, int d) {
-		// Hint: Use Math.max (example above)
-		// https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html#max(int,%20int)
-		return 42; // TODO: Implement calculateMax
+		int max1 = Math.max(a, b);
+		int max2 = Math.max(c, d);
+
+		return Math.max(max1, max2); 
 	}
 
 	/**
@@ -126,9 +158,10 @@ public class Hw4Pr1Basics {
 	 * Source: Mudd faculty
 	 */
 	public static int calculateAbsMax(int a, int b) {
-		// Hint: Use Math.abs
-		// https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html#abs(int)
-		return 42; // TODO: Implement calculateAbsMax
+		if (Math.abs(a) > Math.abs(b)){
+			return a;
+		}
+		return b; // TODO: Implement calculateAbsMax
 	}
 
 	/**
@@ -137,9 +170,8 @@ public class Hw4Pr1Basics {
 	 * Source: Mudd faculty
 	 */
 	public static double calculatePerimeter(double radius) {
-		// Hint: Use Math.PI
-		// https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html#PI
-		return Math.PI + 42; // TODO: Implement calculatePerimeter
+		
+		return Math.PI * 2 * radius; // TODO: Implement calculatePerimeter
 	}
 
 	public static void main(String[] args) {
@@ -150,7 +182,6 @@ public class Hw4Pr1Basics {
 		System.out.println("You can find this text of this message");
 		System.out.println("at the bottom of the file: Hw4Pr1Basics.java");
 
-		// You can add debugging statements here to test your methods!
 	}
 
 }

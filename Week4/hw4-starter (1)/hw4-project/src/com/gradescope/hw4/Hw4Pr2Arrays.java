@@ -18,12 +18,13 @@ public class Hw4Pr2Arrays {
 	 * Source: http://codingbat.com/prob/p184031 (answer available)
 	 */
 	public static int arrayCount9(int[] nums) {
-		// TODO: Delete debugging statements from arrayCount9
-		System.out.println("****** arrayCount9 ******"); // debug help
-		System.out.println("input: " + Arrays.toString(nums)); // debug help
-		System.out.println("Some number: " + 0); // debug help
-
-		return 0; // TODO: Implement arrayCount9
+		int numNine = 0;
+		for(int i = 0; i < nums.length; i++){
+			if (nums[i] == 9){
+				numNine++;
+			}
+		}
+		return numNine;
 	}
 
 	/**
@@ -33,11 +34,14 @@ public class Hw4Pr2Arrays {
 	 * Source: http://codingbat.com/prob/p186031 (answer available)
 	 */
 	public static boolean arrayFront9(int[] nums) {
-		// TODO: Delete debugging statements from arrayFront9
-		System.out.println("****** arrayFront9 ******"); // debug help
-		System.out.println("input: " + Arrays.toString(nums)); // debug help
-		System.out.println("Some number: " + 0); // debug help
-		return true; // TODO: Implement arrayFront9
+		int lengthArray = 0;
+		for (int i = 0; i < nums.length ; i++){
+			if (nums[i] == 9 && lengthArray < 4){
+				return true;
+			}
+			lengthArray++;
+		}
+		return false;
 	}
 
 	/**
@@ -47,11 +51,12 @@ public class Hw4Pr2Arrays {
 	 * Source: http://codingbat.com/prob/p136041 (answer available)
 	 */
 	public static boolean array123(int[] nums) {
-		// TODO: Delete debugging statements from array123
-		System.out.println("****** array123 ******"); // debug help
-		System.out.println("input: " + Arrays.toString(nums)); // debug help
-		System.out.println("Some number: " + 0); // debug help
-		return true; // TODO: Implement array123
+		for (int i = 1; i < nums.length - 1; i++){
+			if (nums[i - 1] == 1 && nums[i] == 2 && nums[i + 1] == 3){
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -62,11 +67,13 @@ public class Hw4Pr2Arrays {
 	 * Source: http://codingbat.com/prob/p110019 (answer available)
 	 */
 	public static int array667(int[] nums) {
-		// TODO: Delete debugging statements from array667
-		System.out.println("****** array667 ******"); // debug help
-		System.out.println("input: " + Arrays.toString(nums)); // debug help
-		System.out.println("Some number: " + 0); // debug help
-		return 0; // TODO: Implement array667
+		int count = 0;
+		for(int i = 0; i < nums.length - 1; i++){
+			if((nums[i] == 6 && nums[i + 1] == 6)||(nums[i] == 6 && nums[i + 1] == 7)){
+				count++;
+			}
+		}
+		return count; 
 	}
 
 	/**
@@ -76,11 +83,12 @@ public class Hw4Pr2Arrays {
 	 * Source: http://codingbat.com/prob/p170221 (answer available)
 	 */
 	public static boolean noTriples(int[] nums) {
-		// TODO: Delete debugging statements from noTriples
-		System.out.println("****** noTriples ******"); // debug help
-		System.out.println("input: " + Arrays.toString(nums)); // debug help
-		System.out.println("Some number: " + 0); // debug help
-		return true; // TODO: Implement noTriples
+		for(int i = 1; i < nums.length - 1; i++){
+			if(nums[i - 1] == nums[i] && nums[i] == nums[i + 1]){
+				return false;
+			}
+		}
+		return true;
 	}
 
 	/**
@@ -90,11 +98,10 @@ public class Hw4Pr2Arrays {
 	 * Source: http://codingbat.com/prob/p185685 (hint available)
 	 */
 	public static boolean firstLast6(int[] nums) {
-		// TODO: Delete debugging statements from firstLast6
-		System.out.println("****** firstLast6 ******"); // debug help
-		System.out.println("input: " + Arrays.toString(nums)); // debug help
-		System.out.println("Some number: " + 0); // debug help
-		return true; // TODO: Implement firstLast6
+		if(nums[0] == 6 || nums[nums.length - 1] == 6){
+			return true;
+		}
+		return false; 
 	}
 
 	/**
@@ -104,11 +111,10 @@ public class Hw4Pr2Arrays {
 	 * Source: http://codingbat.com/prob/p118976 (hint available)
 	 */
 	public static boolean sameFirstLast(int[] nums) {
-		// TODO: Delete debugging statements from sameFirstLast
-		System.out.println("****** sameFirstLast ******"); // debug help
-		System.out.println("input: " + Arrays.toString(nums)); // debug help
-		System.out.println("Some number: " + 0); // debug help
-		return true; // TODO: Implement sameFirstLast
+		if(nums.length > 0 && nums[0] == nums[nums.length - 1]){
+			return true;
+		}
+		return false; 
 	}
 
 	/**
@@ -118,11 +124,8 @@ public class Hw4Pr2Arrays {
 	 * Source: http://codingbat.com/prob/p167011
 	 */
 	public static int[] makePi() {
-		// TODO: Delete debugging statements from makePi
-		System.out.println("****** makePi ******"); // debug help
-		System.out.println("Some number: " + 0); // debug help
-		int[] retVal = new int[3];
-		return retVal; // TODO: Implement makePi
+		int pi[] = {3, 1, 4};
+		return pi;
 	}
 
 	/**
@@ -133,12 +136,10 @@ public class Hw4Pr2Arrays {
 	 * Source: http://codingbat.com/prob/p191991
 	 */
 	public static boolean commonEnd(int[] a, int[] b) {
-		// TODO: Delete debugging statements from commonEnd
-		System.out.println("****** commonEnd ******"); // debug help
-		System.out.println("a: " + Arrays.toString(a)); // debug help
-		System.out.println("b: " + Arrays.toString(b)); // debug help
-		System.out.println("Some number: " + 0); // debug help
-		return true; // TODO: Implement commonEnd
+		if(a[0] == b[0] || a[a.length - 1] == b[b.length - 1]){
+			return true;
+		}
+		return false; 
 	}
 
 	/**
@@ -147,13 +148,9 @@ public class Hw4Pr2Arrays {
 	 * Source: http://codingbat.com/prob/p175763
 	 */
 	public static int sum3(int[] nums) {
-		// TODO: Delete debugging statements from sum3
-		System.out.println("****** sum3 ******"); // debug help
-		System.out.println("input: " + Arrays.toString(nums)); // debug help
-		System.out.println("Some number: " + 0); // debug help
 		int sum = 0;
 		for (int i = 0; i < nums.length; i++) {
-			// TODO: Implement sum3
+			sum += nums[i];
 		}
 		return sum;
 	}
@@ -165,11 +162,11 @@ public class Hw4Pr2Arrays {
 	 * Source: http://codingbat.com/prob/p185139
 	 */
 	public static int[] rotateLeft3(int[] nums) {
-		// TODO: Delete debugging statements from rotateLeft3
-		System.out.println("****** rotateLeft3 ******"); // debug help
-		System.out.println("input: " + Arrays.toString(nums)); // debug help
-		System.out.println("Some number: " + 0); // debug help
-		return null; // TODO: Implement rotateLeft3
+		int temp1 = nums[0];
+		nums[0] = nums[1];
+		nums[1] = nums[2];
+		nums[2] = temp1;
+		return nums; 
 	}
 
 	/**
@@ -179,11 +176,13 @@ public class Hw4Pr2Arrays {
 	 * Source: http://codingbat.com/prob/p162010
 	 */
 	public static int countEvens(int[] nums) {
-		// TODO: Delete debugging statements from countEvens
-		System.out.println("****** countEvens ******"); // debug help
-		System.out.println("input: " + Arrays.toString(nums)); // debug help
-		System.out.println("Some number: " + 0); // debug help
-		return 0; // TODO: Implement countEvens
+		int evenCount = 0;
+		for (int i = 0; i < nums.length; i++){
+			if(nums[i] % 2 == 0){
+				evenCount++;	
+			}
+		}
+		return evenCount; 
 	}
 
 	/**
@@ -194,11 +193,13 @@ public class Hw4Pr2Arrays {
 	 * Source: http://codingbat.com/prob/p196640
 	 */
 	public static int bigDiff(int[] nums) {
-		// TODO: Delete debugging statements from bigDiff
-		System.out.println("****** bigDiff ******"); // debug help
-		System.out.println("input: " + Arrays.toString(nums)); // debug help
-		System.out.println("Some number: " + 0); // debug help
-		return 0; // TODO: Implement bigDiff
+		int min = nums[0];
+		int max = nums[0];
+		for(int i = 1; i < nums.length; i++){
+			min = Math.min(min, nums[i]);
+			max = Math.max(max, nums[i]);
+		}
+		return max - min; 
 	}
 
 	/**
@@ -211,14 +212,31 @@ public class Hw4Pr2Arrays {
 	 * Source: http://codingbat.com/prob/p136585
 	 */
 	public static int centeredAverage(int[] nums) {
-		// TODO: Delete debugging statements from centeredAverage
-		System.out.println("****** centeredAverage ******"); // debug help
-		System.out.println("input: " + Arrays.toString(nums)); // debug help
-		System.out.println("Some number: " + 0); // debug help
-		return 0; // TODO: Implement centeredAverage
+		int min = nums[0];
+		int max = nums[0];
+		for(int i = 1; i < nums.length; i++){
+			min = Math.min(min, nums[i]);
+			max = Math.max(max, nums[i]);
+		}
+		int sum = 0;
+		int length = nums.length;
+		for(int i = 0; i < nums.length; i++){
+			if (nums[i] == max){
+				max = Integer.MAX_VALUE;
+				length--;
+			}
+			else if (nums[i] == min){
+				min = Integer.MIN_VALUE;
+				length--;
+			}
+			else{
+			sum += nums[i];
+			}
+		}
+
+		return sum / length;
 	}
 
 	public static void main(String[] args) {
-		// You can add debugging statements here to test your methods!
 	}
 }
