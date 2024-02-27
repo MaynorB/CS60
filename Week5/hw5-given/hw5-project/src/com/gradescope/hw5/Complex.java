@@ -1,5 +1,6 @@
 package com.gradescope.hw5;
 
+import java.lang.Math;
 /**
  * The Complex class represents a complex number and includes methods for
  * performing basic operations with complex numbers.
@@ -106,8 +107,7 @@ public class Complex {
 	 * @return The magnitude of this complex number
 	 */
 	public double magnitude() {
-		// TODO: Implement magnitude
-		return 0.0;
+		return Math.sqrt(this.real * this.real + this.imag * this.imag);
 	}
 
 	/**
@@ -119,15 +119,17 @@ public class Complex {
 	 * @return A new complex object that is the negation of this complex number
 	 */
 	public Complex negate() {
-		// TODO: Implement negate
-		return null;
+		this.imag *= -1;
+		this.real *= -1;
+		return new Complex(this.real, this.imag);
 	}
 
 	/**
 	 * Destructively negates this complex number.
 	 */
 	public void negateDest() {
-		// TODO: Implement negateDest
+		this.imag *= -1;
+		this.real *= -1;
 	}
 
 	/**
@@ -139,15 +141,15 @@ public class Complex {
 	 * @return A new complex object that is the conjugate of this complex number
 	 */
 	public Complex conjugate() {
-		// TODO: Implement conjugate
-		return null;
+		this.imag *= -1;
+		return new Complex(this.real, this.imag);
 	}
 
 	/**
 	 * Destructively conjugates this complex number.
 	 */
 	public void conjugateDest() {
-		// TODO: Implement conjugateDest
+		this.imag *= -1;
 	}
 
 	/**
@@ -161,8 +163,7 @@ public class Complex {
 	 *         other complex number
 	 */
 	public Complex add(Complex other) {
-		// TODO: Implement add
-		return null;
+		return new Complex(this.real + other.getReal(), this.imag + other.getImag());
 	}
 
 	/**
@@ -172,7 +173,8 @@ public class Complex {
 	 * @param other - The other complex object
 	 */
 	public void addDest(Complex other) {
-		// TODO: Implement addDest
+		this.real += other.getReal();
+		this.imag += other.getImag();
 	}
 
 	/**
@@ -186,8 +188,9 @@ public class Complex {
 	 *         the other complex number
 	 */
 	public Complex multiply(Complex other) {
-		// TODO: Implement multiply
-		return null;
+		
+		return new Complex(this.real * other.getReal() - this.imag * other.getImag(), // Calculate the real part of the complex number
+		this.real * other.getImag() + this.imag * other.getReal()); //Imaginary part calculation
 	}
 
 	/**
@@ -226,7 +229,12 @@ public class Complex {
 	 *         other complex number
 	 */
 	public Complex divide(Complex other) {
-		// TODO: Implement divide
-		return null;
+		if (other.equals(new Complex(0, 0))){
+			return new Complex(Double.NaN, Double.NaN);
+		}
+		double firstNumuerator = (this.real * other.getReal() + this.imag * other.getImag());
+		double denominator = (other.getReal() * other.getReal() + other.getImag() * other.getImag());
+		double secondNumuerator = (this.imag * other.getReal() - this.real * other.getImag());
+		return new Complex(firstNumuerator / denominator, secondNumuerator / denominator);
 	}
 }
